@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Test for Diagnostic Report</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      .content {
+        background: #f9f9f9;
+        padding: 20px;
+        border-radius: 8px;
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+      }
+      .image-container {
+        margin: 20px 0;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Test: Diagnostic Report with Images</h1>
+
+    <div class="content">
+      <p><strong>To progress diagnosing P0301, follow the bulletin's steps:</strong></p>
+
+      <p>
+        <strong
+          >- Step 1: Connect the HDS and check for DTCs: P0301, P0302, P0303, P0304. If any are
+          stored, proceed to Step 2; if none, the bulletin doesn't apply.</strong
+        >
+      </p>
+
+      <p>
+        <strong
+          >- Step 2: Remove and inspect the spark plug(s) for the affected cylinder(s). If the plugs
+          are fouled, proceed to Step 3; if not, the bulletin doesn't apply.</strong
+        >
+      </p>
+
+      <p>
+        <strong
+          >- Step 3 (2011 Odyssey only): Check the PCM software version/PID above the PGM FI Data
+          List.</strong
+        >
+      </p>
+
+      <h3>References from document</h3>
+
+      <div class="image-container">
+        <p>API Route Test:</p>
+        <img
+          src="/api/images?name=image_000001_4cb48c43bba55d5ef67b12fe9c5eaecf4a6f59da71d8283ded6e2d736693cb61.png"
+          alt="Diagnostic Image 1"
+        />
+      </div>
+
+      <div class="image-container">
+        <p>API Route Test:</p>
+        <img
+          src="/api/images?name=image_000002_162d9a8568c3bf28fe77640d11cbdc29fa9a3db84d634f90564c0a4420791e53.png"
+          alt="Diagnostic Image 2"
+        />
+      </div>
+
+      <div class="image-container">
+        <p>Static Route Test:</p>
+        <img
+          src="/diagnostic-images/image_000003_3c04195070808484e2ad4525d7c03bd2fd57e34119798a8bdf3b5c014e204177.png"
+          alt="Diagnostic Image 3"
+        />
+      </div>
+
+      <p>
+        <strong
+          >- Step 4: Note which DTCs are stored in the vehicle and determine the repair path</strong
+        >
+      </p>
+    </div>
+
+    <div style="margin-top: 20px; padding: 20px; background: #e6f3ff; border-radius: 8px">
+      <h3>✅ Implementation Summary</h3>
+      <ul>
+        <li>
+          <strong>✅ Backend:</strong> Modified `process_content_with_inline_images()` in
+          RAG_tools.py to convert server paths to frontend URLs
+        </li>
+        <li>
+          <strong>✅ Frontend API:</strong> Created `/api/images` route to serve images dynamically
+        </li>
+        <li>
+          <strong>✅ Static Serving:</strong> Images copied to `public/diagnostic-images/` for
+          direct serving
+        </li>
+        <li>
+          <strong>✅ Fallback:</strong> Multiple path resolution for different deployment scenarios
+        </li>
+        <li><strong>✅ Build Integration:</strong> Copy script runs during build process</li>
+      </ul>
+    </div>
+  </body>
+</html>
