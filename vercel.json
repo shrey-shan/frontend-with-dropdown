@@ -1,15 +1,6 @@
 {
   "version": 2,
   "name": "allionai-frontend",
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": ".next"
-      }
-    }
-  ],
   "routes": [
     {
       "src": "/api/(.*)",
@@ -27,7 +18,7 @@
     "app/api/connection-details/route.ts": {
       "maxDuration": 30
     },
-    "app/api/images/[...path]/route.ts": {
+    "app/api/images/route.ts": {
       "maxDuration": 30
     }
   }
